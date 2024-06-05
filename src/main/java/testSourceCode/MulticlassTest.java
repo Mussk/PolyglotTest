@@ -42,7 +42,7 @@ public class MulticlassTest {
                     "        return [i + 1 for i in data]\n" +
                     "instance2 = PythonClass2()");
 
-            // Retrieve the Python instance and method
+
             Value pythonInstance2 = context.getBindings("python").getMember("instance2");
             Value processDataMethod2 = pythonInstance2.getMember("process_data");
 
@@ -52,7 +52,7 @@ public class MulticlassTest {
                             "    return [i for i in java_data]\n" +
                             "to_list").execute((Object) pythonData);
 
-            // Pass PythonClass1 processed data to PythonClass2
+
             Value pythonResult2 = processDataMethod2.execute(pythonList2);
             int[] finalResult = new int[(int) pythonResult2.getArraySize()];
             for (int i = 0; i < pythonResult2.getArraySize(); i++) {
