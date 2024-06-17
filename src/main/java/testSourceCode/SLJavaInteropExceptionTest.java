@@ -42,10 +42,9 @@ package testSourceCode;
 
 import static testSourceCode.SLExceptionTest.assertGuestFrame;
 import static testSourceCode.SLExceptionTest.assertHostFrame;
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.instanceOf;
 
-import java.util.Arrays;
+
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;

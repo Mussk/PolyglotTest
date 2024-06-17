@@ -56,7 +56,11 @@ public class SLCodeSharingTest {
 
             slCodeSharingTest.testFibSharing();
 
-        } catch (Exception exception){ exception.fillInStackTrace();}
+        } catch (Exception exception) {
+
+            exception.printStackTrace();
+            exception.fillInStackTrace();
+        }
 
 
     }

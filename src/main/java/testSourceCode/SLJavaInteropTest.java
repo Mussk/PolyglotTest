@@ -588,7 +588,8 @@ public class SLJavaInteropTest {
      * Converts a {@link ByteArrayOutputStream} content into UTF-8 String with UNIX line ends.
      */
     static String toUnixString(ByteArrayOutputStream stream) {
-        return stream.toString(StandardCharsets.UTF_8).replace("\r\n", "\n");
+
+        return stream.toString().replace("\r\n", "\n");//stream.toString(StandardCharsets.UTF_8).replace("\r\n", "\n");
     }
 
     @FunctionalInterface

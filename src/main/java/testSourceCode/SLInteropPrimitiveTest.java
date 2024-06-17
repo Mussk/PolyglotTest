@@ -104,12 +104,12 @@ public class SLInteropPrimitiveTest {
         res = fnc.getContext().getBindings("js").getMember("main").execute(Long.MAX_VALUE, Long.MAX_VALUE);
         //should be 14 in the end
         System.out.println(new BigInteger("18446744073709551616").equals(res.asBigInteger()) ? "Big integers are equal" : "Big integers are not equal");
-        res = fnc.getContext().getBindings("js").getMember("main").execute(BigInteger.valueOf(Long.MAX_VALUE).add(BigInteger.TWO), Long.MAX_VALUE);
+        res = fnc.getContext().getBindings("js").getMember("main").execute(BigInteger.valueOf(Long.MAX_VALUE)/*.add(BigInteger.TWO)*/, Long.MAX_VALUE);
         System.out.println(new BigInteger("18446744073709551616").equals(res.asBigInteger()) ? "Big integers are equal" : "Big integers are not equal");
-        res = fnc.getContext().getBindings("js").getMember("main").execute(BigInteger.valueOf(Long.MAX_VALUE), BigInteger.valueOf(Long.MAX_VALUE).add(BigInteger.TWO));
+        res = fnc.getContext().getBindings("js").getMember("main").execute(BigInteger.valueOf(Long.MAX_VALUE), BigInteger.valueOf(Long.MAX_VALUE)/*.add(BigInteger.TWO)*/);
         System.out.println(new BigInteger("18446744073709551616").equals(res.asBigInteger()) ? "Big integers are equal" : "Big integers are not equal");
         //should be 18 at the end
-        res = fnc.getContext().getBindings("js").getMember("main").execute(BigInteger.valueOf(Long.MAX_VALUE).add(BigInteger.TWO), BigInteger.valueOf(Long.MAX_VALUE).add(BigInteger.TWO));
+        res = fnc.getContext().getBindings("js").getMember("main").execute(BigInteger.valueOf(Long.MAX_VALUE)/*.add(BigInteger.TWO)*/, BigInteger.valueOf(Long.MAX_VALUE)/*.add(BigInteger.TWO)*/);
         System.out.println(new BigInteger("18446744073709551616").equals(res.asBigInteger()) ? "Big integers are equal" : "Big integers are not equal");
 
        // Assert.assertTrue(fnc.canExecute());

@@ -11,10 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import com.oracle.truffle.api.interop.InteropLibrary;
-import com.oracle.truffle.api.interop.TruffleObject;
-import com.oracle.truffle.api.library.ExportLibrary;
-import com.oracle.truffle.api.library.ExportMessage;
+
 
 public class PassItselfBackViaContextTest {
 
@@ -68,18 +65,18 @@ public class PassItselfBackViaContextTest {
     }
 
 
-    @ExportLibrary(InteropLibrary.class)
-    public static class MyObj implements TruffleObject {
+
+    public static class MyObj {
         private Object value;
 
-        @ExportMessage
+
         public Object execute(Object[] arguments) {
             value = arguments[0];
             return "";
         }
 
         @SuppressWarnings("static-method")
-        @ExportMessage
+
         public boolean isExecutable() {
             return true;
         }
