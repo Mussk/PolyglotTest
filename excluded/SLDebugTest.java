@@ -57,11 +57,11 @@ import org.graalvm.polyglot.Source;
 import org.graalvm.polyglot.Value;
 
 /** Exclududed, debug functionality **/
-
+  /*
 public class SLDebugTest {
 
 
-   /* public static void runWithWeakEncapsulationOnly() {
+  public static void runWithWeakEncapsulationOnly() {
         TruffleTestAssumptions.assumeWeakEncapsulation();
     }*/
 

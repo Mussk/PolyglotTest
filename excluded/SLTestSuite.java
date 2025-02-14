@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2012, 2020, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * The Universal Permissive License (UPL), Version 1.0
@@ -40,21 +40,35 @@
  */
 package testSourceCode;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+/*
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface SLTestSuite {
 
+    /**
+     * Defines the base path of the test suite. Multiple base paths can be specified. However only
+     * the first base that exists is used to lookup the test cases.
 
+    String[] value();
 
-@SLTestSuite({"tests"})
-public class SLSimpleTestSuite {
-
-    public static void main(String[] args) throws Exception {
-       // SLTestRunner.runInMain(SLSimpleTestSuite.class, args);
-    }
-
-    /*
-     * Our "mx unittest" command looks for methods that are annotated with @Test. By just defining
-     * an empty method, this class gets included and the test suite is properly executed.
+    /**
+     * A class in the same project (or .jar file) that contains the {@link #value test case
+     * directory}. If the property is not specified, the class that declares the annotation is used,
+     * i.e., the test cases must be in the same project as the test class.
      */
+   // Class<?> testCaseDirectory() default SLTestSuite.class;
 
-    public void unittest() {
-    }
+    /**
+     * The options passed to {@code Context.Builder} to configure the {@code Context} executing the
+     * tests. The options are given as an string array containing an option name followed by an
+     * option value.
+     *
+     * @since 20.0.0
+
+    String[] options() default {};
 }
+*/

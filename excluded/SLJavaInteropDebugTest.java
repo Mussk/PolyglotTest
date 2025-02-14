@@ -49,10 +49,10 @@ import org.graalvm.polyglot.Source;
 import org.graalvm.polyglot.Value;
 
 /** Excluded, debug functionality **/
-
+/*
 public class SLJavaInteropDebugTest {
 
-/*
+
     public static void runWithWeakEncapsulationOnly() {
         TruffleTestAssumptions.assumeWeakEncapsulation();
     }
